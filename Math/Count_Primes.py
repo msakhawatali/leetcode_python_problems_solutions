@@ -1,3 +1,6 @@
-n = 50
-mylist = [True] * n
-print(mylist)
+n = 10
+for i in range(n):
+    if n >=2:
+
+
+
