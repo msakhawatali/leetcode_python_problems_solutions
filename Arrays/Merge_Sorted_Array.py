@@ -7,7 +7,7 @@ class Solution(object):
             if nums1[i] >= nums2[j]:
                 nums1[idx] = nums1[i]
                 idx -= 1
-                i -= 1
+                i -= 1 
             else:
                 nums1[idx] = nums2[j]
                 idx -= 1

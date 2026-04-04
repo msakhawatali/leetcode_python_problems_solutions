@@ -1,9 +1,5 @@
 class Solution(object):
     def nextPermutation(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: None Do not return anything, modify nums in-place instead.
-        """
         n = len(nums)
         pivot_index = -1
         for i in range(n-2 , -1, -1):
