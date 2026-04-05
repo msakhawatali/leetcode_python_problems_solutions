@@ -1,6 +1,5 @@
 class Solution(object):
     def reverseString(self, s):
-
         st = 0
         end = len(s)-1
         while st < end:
