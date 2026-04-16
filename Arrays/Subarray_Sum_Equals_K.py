@@ -1,17 +1,17 @@
 class Solution(object):
     def subarraySum(self, nums, k):
-
-        prefix_dict = {}
-        prefix_dict[0] = 1
-        result, cumSum = 0, 0
-        n = len(nums)
-
-        for i in range(n):
-            cumSum += nums[i]
-
-            if cumSum-k in prefix_dict:
-                result += prefix_dict[cumSum-k]
-
-            prefix_dict[cumSum] = prefix_dict.get(cumSum, 0) + 1
+        count = 0
+        current_sum = 0
+        prefix_sums = {0: 1} 
+        
+        for num in nums:
+            current_sum += num
             
-        return result
+
+            if (current_sum - k) in prefix_sums:
+                count += prefix_sums[current_sum - k]
+            
+            prefix_sums[current_sum] = prefix_sums.get(current_sum, 0) + 1
+            
+        return count
+        
