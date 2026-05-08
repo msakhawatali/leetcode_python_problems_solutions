@@ -1,7 +1,7 @@
-haystack = "sadbutsad"
-needle = "sad"
-len_needle = len(needle)
-if haystack[:len_needle] == needle:
-    print(0)
-else:
-    print(-1)
+class Solution(object):
+    def strStr(self, haystack, needle):
+        len_needle = len(needle)
+        for i in range(len(haystack) - len_needle + 1):
+            if haystack[i:i+len_needle] == needle:
+                return i
+        return -1
