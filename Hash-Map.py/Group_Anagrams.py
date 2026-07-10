@@ -1,0 +1,12 @@
+class Solution(object):
+    def groupAnagrams(self, strs):
+        groups = {}   
+        my_list = []
+        for s in strs:
+            key = ''.join(sorted(s))   
+            if key in groups:
+                groups[key].append(s)
+            else:
+                groups[key] = [s]
+
+        return list(groups.values())
