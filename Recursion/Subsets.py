@@ -1,16 +1,17 @@
 class Solution(object):
     def subsets(self, nums):
 
-        res = []
-        subset = []
-        def dfs(i):
-            if i >= len(nums):
-                res.append(list(subset))
-                return        
-            subset.append(nums[i])
-            dfs(i+1)
+        result = []
+        def backtracking(index, current_subset):
+            if index == len(nums):
+                result.append(list(current_subset))
+                return
+            current_subset.append((nums[index]))
+            backtracking(index+1, current_subset)
 
-            subset.pop()
-            dfs(i+1)
-        dfs(0)
-        return res
+            current_subset.pop()
+
+            backtracking(index+1, current_subset)
+
+        backtracking(0,[])
+        return result
