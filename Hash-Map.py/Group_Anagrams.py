@@ -1,12 +1,13 @@
+from collections import defaultdict
 class Solution(object):
     def groupAnagrams(self, strs):
-        groups = {}   
-        my_list = []
+        groups = defaultdict(list)
+        
         for s in strs:
-            key = ''.join(sorted(s))   
-            if key in groups:
-                groups[key].append(s)
-            else:
-                groups[key] = [s]
-
+            count = [0] * 26  
+            for char in s:
+                count[ord(char) - ord('a')] += 1
+                
+            groups[tuple(count)].append(s)
+            
         return list(groups.values())
